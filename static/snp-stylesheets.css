@@ -4,33 +4,22 @@
 	padding: 0;
 	font-family: monospace;
 	user-select: none;
-	color: #191919;
 }
 
 body
 {
 	background-image: url(Many-books-library-blurry_1920x1080.jpg);
-	background-size: cover;
 }
 
 #input-output-section
 {
-	width: 700px;
-	height: 92vh;
+	width: 840px;
+	height: 100vh;
 	display: flex;
 	justify-content: space-evenly;
 	flex: 300 1 row;
 	margin: 0 auto;
 	align-items: center;
-}
-
-.child
-{
-	height: 180px;
-	width: 410px;
-	background: rgba(0,0,0,0);
-	border-radius: 10px;
-	padding: 10px;
 }
 
 input
@@ -55,53 +44,13 @@ input, select, option, button
 	transition: letter-spacing ease-out 0.5s;
 }
 
-#navbar
-{
-	height: 50px;
-	width: 100wh;
-	background: #2d2f34;
-	justify-content: space-evenly;
-
-}
-
-#nav-link
-{
-	display: flex;
-	align-items: center;
-	height: 50px;
-	width: 90wh;
-	padding: 0 5px;
-}
-
-#nav-link ul
-{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-around;
-	marks: none;
-	list-style: none;
-}
-
-.link
-{
-	text-decoration: none;
-	color: #aaa;
-}
-
-.link:hover
-{
-	text-decoration: none;
-	color: #fff;
-}
-
-#input
+#input-section, #output-section
 {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
-	height: 180px;
+	height: 200px;
 }
 
 input:hover, select:hover, option:hover, button:hover
@@ -122,18 +71,14 @@ input:focus, select:focus, option:focus, button:focus
 	text-align: center;
 }
 
-#output
+button
 {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+	width: 400px;
 }
 
-#the-mainest_of_the_main
+#output
 {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-evenly;
-	height: 360px;
+	letter-spacing: 0;
+	text-align: center;
+	height: 400px;
 }

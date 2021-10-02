@@ -17,7 +17,8 @@ def dict_page():
 @app.route('/translate', methods=['POST'])
 def index_post():
     original_text = request.form['word']
-    target_language = "ru"
+    from_language = request.form['from']
+    to_language = request.form['to']
     print(original_text)
     key = os.environ['KEY']
     endpoint = os.environ['ENDPOINT']
@@ -26,7 +27,7 @@ def index_post():
 
     path = '/translate?api-version=3.0&'
 
-    target_language_parameter = 'from=en&to=' + target_language
+    target_language_parameter = 'from=' + from_language + '&to=' + to_language
 
     constructed_url = endpoint + path + target_language_parameter
 
