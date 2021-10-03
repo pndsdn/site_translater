@@ -27,7 +27,6 @@
 // 	};
 // });
 
-
 $(document).ready(function(){
 	$(function() {
 		$("#translate").on("click", function(e) {

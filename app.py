@@ -36,7 +36,6 @@ def index_post():
         'X-ClientTraceId': str(uuid.uuid4())
     }
 
-
     body = [{'text': original_text}]
 
     translator_request = requests.post(
