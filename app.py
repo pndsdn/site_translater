@@ -1,13 +1,11 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify, url_for
 import requests
 import os
 import uuid
 import json
 from dotenv import load_dotenv
 load_dotenv()
-
-# сделать выбор языка
-# асинхронный JS запрос для обновления результата
+# url_for('static', filename='script.js')
 
 app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
@@ -16,14 +14,14 @@ def dict_page():
 
 @app.route('/translate', methods=['POST'])
 def index_post():
+
     original_text = request.form['word']
     from_language = request.form['from']
     to_language = request.form['to']
-    print(original_text)
+
     key = os.environ['KEY']
     endpoint = os.environ['ENDPOINT']
     location = os.environ['LOCATION']
-
 
     path = '/translate?api-version=3.0&'
 
@@ -47,10 +45,7 @@ def index_post():
     translator_response = translator_request.json()
     translated_text = translator_response[0]['translations'][0]['text']
 
-    return render_template(
-        'result.html',
-        word=translated_text
-    )
+    return jsonify(translated_text)
 
 if __name__ == '__main__':
     app.run()
