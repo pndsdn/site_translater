@@ -12,8 +12,8 @@
                         <input id="input-user-text" type="text" name="word" placeholder="Type text">
                     </div>
                     <div>
-                        <select name="from" required id="select-lang-from">
-                            <option value="none" disabled selected>from...</option>
+                        <select name="from" required id="select-lang-from"> <!-- ниспадающее меню выбора языка исходного текста -->
+                            <option value="none" disabled selected>from...</option> <!-- значение по дефолту, нельзя выбрать -->
                             <option value="ru">Russian</option>
                             <option value="en">English</option>
                             <option value="fr">French</option>
@@ -21,8 +21,8 @@
                             <option value="it">Italian</option>
                             <option value="es">Spainish</option>
                         </select>
-                        <select name="to" required id="select-lang-to">
-                            <option value="none" disabled selected>to...</option>
+                        <select name="to" required id="select-lang-to"> <!-- ниспадающее меню выбора языка, на который будет переведён текст -->
+                            <option value="none" disabled selected>to...</option> <!-- значение по дефолту, нельзя выбрать -->
                             <option value="ru">Russian</option>
                             <option value="en">English</option>
                             <option value="fr">French</option>
@@ -37,11 +37,11 @@
                 </form>
             </div>
             <div id="output-section">
-                <input disabled type="text" name="output" id="output" placeholder="Output">
+                <input disabled type="text" name="output" id="output-translated-text" placeholder="Output">
             </div>
         </section>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-        <script type="text/javascript" src="/static/app.js"></script>
-        <script type="text/javascript" src="{{url_for('static', filename='app.js')}}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> <!--                      -->
+        <script type="text/javascript" src="/static/app.js"></script>                            <!-- подключение скриптов -->
+        <script type="text/javascript" src="{{url_for('static', filename='app.js')}}"></script>  <!--                      -->
     </body>
 </html>
