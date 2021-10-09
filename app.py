@@ -27,7 +27,7 @@ def index_post():
     key = os.environ['KEY']                # значения key,
     endpoint = os.environ['ENDPOINT']      # endpoint,
     location = os.environ['LOCATION']      # location берутся из файла .env
-    path = '/translate?api-version=3.0&'
+    path = '/translate?api-version=3.0&'   # путь
     target_language_parameter = 'from=' + from_language + '&to=' + to_language  # часть ссылки, которая отвечает за параметры перевода
     constructed_url = endpoint + path + target_language_parameter  # готовая ссылка
 
