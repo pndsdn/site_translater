@@ -5,6 +5,7 @@ $(function() {
         var from_languageVal = document.getElementById("select-lang-from").value; // значение по ID 'select-lang-from'
         var to_languageVal = document.getElementById("select-lang-to").value; // значение по ID 'select-lang-to'
         var translateRequest = { 'translate': translateVal, 'from': from_languageVal, 'to': to_languageVal } // создаём шаблон запроса
+        console.log(translateRequest);
 
         if (translateVal !== "") { // проверка на непустое значение
             $.ajax({

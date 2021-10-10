@@ -9,7 +9,7 @@
             <div id="input-section">
                 <form action="/translate" method="post" id="form">
                     <div>
-                        <input id="input-user-text" type="text" name="word" placeholder="Type text">
+                        <input id="input-user-text" type="text" name="word" autocomplete="off" placeholder="Type text">
                     </div>
                     <div>
                         <select name="from" required id="select-lang-from"> <!-- ниспадающее меню выбора языка исходного текста -->
@@ -40,8 +40,7 @@
                 <input disabled type="text" name="output" id="output-translated-text" placeholder="Output">
             </div>
         </section>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> <!--                      -->
-        <script type="text/javascript" src="/static/app.js"></script>                            <!-- подключение скриптов -->
-        <script type="text/javascript" src="{{url_for('static', filename='app.js')}}"></script>  <!--                      -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script type="text/javascript" src="/static/app.js"></script>
     </body>
 </html>

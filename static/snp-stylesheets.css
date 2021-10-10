@@ -89,7 +89,8 @@ input, select, option, button
 {
     background: #fff;
     color: #000;
-    transition: background ease-out 0.3s;
+    font-size: 1.1em;
+    transition: background ease-out 0.3s, font-size ease-out 0.1s;
     cursor: pointer;
 }
 
