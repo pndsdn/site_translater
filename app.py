@@ -16,12 +16,10 @@ def dict_page():
 
 @app.route('/translate', methods=['POST'])
 def index_post():
-    original_text = request.json['translate'].lower()  # получаем значение из запроса по ключу 'translate'
-    print(original_text)
-    from_language = request.json['from']  # получаем значение из запроса по ключу 'from'
-    print(from_language)
-    to_language = request.json['to']  # получаем значение из запроса по ключу 'to'
-    print(to_language)
+    data = request.get_json()
+    original_text = data['translate']
+    from_language = data['from']
+    to_language = data['to']
 
     # здесь создаётся ссылка для запроса
     key = os.environ['KEY']                # значения key,
@@ -35,13 +33,12 @@ def index_post():
     headers = {
         'Ocp-Apim-Subscription-Key': key,
         'Ocp-Apim-Subscription-Region': location,
-        'Content-type': 'application/json',
         'X-ClientTraceId': str(uuid.uuid4())
     }
-
     body = [{'text': original_text}]  # тело запроса
+
     translator_response = requests.post(constructed_url, headers=headers, json=body)  # запрос
-    return translator_response.json()  # возвращаем в виде JSON
+    return jsonify(translator_response.json())  # возвращаем в виде JSON
 
 
 if __name__ == '__main__':

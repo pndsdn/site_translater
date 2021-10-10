@@ -24,8 +24,8 @@ body
 
 input
 {
-	width: 226px;
-	height: 46px;
+	width: 228px;
+	height: 48px;
 	border-radius: 10px;
 	padding-left: 10px;
 }
@@ -35,7 +35,6 @@ select, button
 	width: 240px;
 	height: 50px;
 	border-radius: 10px;
-	font-size: 1em;
 }
 
 input, select, option, button
@@ -43,6 +42,10 @@ input, select, option, button
 	background: #fff;
 	transition: letter-spacing ease-out 0.5s;
 	text-align: center;
+	border-width: 1px;
+	border-color: #191919;
+	margin-bottom: 2px;
+	font-size: 1.1em;
 }
 
 #input-section, #output-section
@@ -51,16 +54,16 @@ input, select, option, button
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
-	height: 200px;
+	height: 210px;
 }
 
-input:hover, select:hover, option:hover, button:hover
+#input-user-text:hover, select:hover, option:hover, button:hover
 {
 	background: #fff;
 	letter-spacing: 2px;
 }
 
-input:focus, select:focus, option:focus, button:focus
+#input-user-text:focus, select:focus, option:focus, button:focus
 {
 	background: #fff;
 	letter-spacing: 0;
@@ -72,9 +75,27 @@ input:focus, select:focus, option:focus, button:focus
 	text-align: center;
 }
 
-#output
+#output-translated-text
 {
 	letter-spacing: 0;
 	text-align: center;
-	height: 400px;
+	height: 50px;
+	width: 240px;
+	border-color: #191919;
+	user-select: none;
 }
+
+.response
+{
+    background: #fff;
+    color: #000;
+    transition: background ease-out 0.3s;
+    cursor: pointer;
+}
+
+.response:hover
+{
+    background: #191919;
+    color: #aaa;
+}
+
